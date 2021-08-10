@@ -1,0 +1,95 @@
+package single_ended_singlely_linked_list;
+
+public class mytest
+{
+    public static void main(String [] args) throws Exception
+    {
+        single_ended_singlely_linked_list list = new single_ended_singlely_linked_list();
+
+        list.insert(1,1);
+        System.out.println("The index is invalid");
+        list.insert(2,2);
+        System.out.println("The index is invalid");
+
+        //The result should be 1 2 here
+        list.print();
+        System.out.println("");
+
+        //Then we try the assignment operator, it should be automatically constructed
+        single_ended_singlely_linked_list list_2 = new single_ended_singlely_linked_list();
+        list_2=list;
+        list_2.print();
+        System.out.println("");
+
+        //Then we try the copy constructor
+        single_ended_singlely_linked_list list_3 = new single_ended_singlely_linked_list(list);
+        list_3.print();
+        System.out.println("");
+
+        //Further insertion
+        list.insert(3,3);
+        list.insert(4,4);
+        list.insert(5,5);
+        list.print();
+        System.out.println("");
+
+        //Some weird index insertion
+        //list.insert(114514,1);
+        //list.print();
+        //System.out.println("");
+        //proved to be working
+
+        //Remove by index
+        list.remove_by_script(2);
+        list.print();
+        System.out.println("");
+
+        //Some weird index removal
+        //list.remove_by_script(114514);
+        //list.print();
+        //System.out.println("");
+        //proved to be working
+
+        //Remove by value
+        list.remove_by_value(4);
+        list.print();
+        System.out.println("");
+
+        //Remove by value
+        list.remove_by_value(1);
+        list.print();
+        System.out.println("");
+
+        //Some weird value removal
+        //list.remove_by_value(114514);
+        //list.print();
+        //System.out.println("");
+        //prove to be working
+
+        list.insert(3,1);
+        list.insert(4,2);
+        list.insert(5,10);
+        list.print();
+        System.out.println("");
+
+        //Remove by index 1
+        list.remove_by_script(1);
+        list.print();
+        System.out.println("");
+
+        //Remove by index 2
+        list.remove_by_script(4);
+        list.print();
+        System.out.println("");
+
+        //find by value
+        int result = list.find_by_value(2);
+        System.out.print("The index for 2 is ");
+        System.out.println(result);
+
+        //find by index
+        int result2 = list.find_by_index(3);
+        System.out.print("The value for index 3 is ");
+        System.out.println(result2);
+    }
+}
